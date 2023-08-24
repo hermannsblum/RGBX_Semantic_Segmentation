@@ -8,15 +8,19 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/thermal-image-segmentation-on-mfn-dataset)](https://paperswithcode.com/sota/thermal-image-segmentation-on-mfn-dataset?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-zju-rgb-p)](https://paperswithcode.com/sota/semantic-segmentation-on-zju-rgb-p?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-eventscape)](https://paperswithcode.com/sota/semantic-segmentation-on-eventscape?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-rsmss)](https://paperswithcode.com/sota/semantic-segmentation-on-rsmss?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-gamus)](https://paperswithcode.com/sota/semantic-segmentation-on-gamus?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-selma)](https://paperswithcode.com/sota/semantic-segmentation-on-selma?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/thermal-image-segmentation-on-rt-5k)](https://paperswithcode.com/sota/thermal-image-segmentation-on-rt-5k?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-kitti-360)](https://paperswithcode.com/sota/semantic-segmentation-on-kitti-360?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-deliver)](https://paperswithcode.com/sota/semantic-segmentation-on-deliver?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/thermal-image-segmentation-on-rgb-t-glass)](https://paperswithcode.com/sota/thermal-image-segmentation-on-rgb-t-glass?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/semantic-segmentation-on-event-based)](https://paperswithcode.com/sota/semantic-segmentation-on-event-based?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/thermal-image-segmentation-on-kp-day-night)](https://paperswithcode.com/sota/thermal-image-segmentation-on-kp-day-night?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cmx-cross-modal-fusion-for-rgb-x-semantic/multispectral-object-detection-on-flir-1)](https://paperswithcode.com/sota/multispectral-object-detection-on-flir-1?p=cmx-cross-modal-fusion-for-rgb-x-semantic)
 
 ![Example segmentation](segmentation.jpg?raw=true "Example segmentation")
 
-The official implementation of CMX: Cross-Modal Fusion for RGB-X Semantic Segmentation with Transformers:
+The official implementation of **CMX: Cross-Modal Fusion for RGB-X Semantic Segmentation with Transformers (IEEE T-ITS 2023)**:
 More details can be found in our paper [[**PDF**](https://arxiv.org/pdf/2203.04838.pdf)].
 
 
@@ -74,6 +78,15 @@ Orgnize the dataset folder in the following structure:
 
 For RGB-Depth semantic segmentation, the generation of HHA maps from Depth maps can refer to [https://github.com/charlesCXK/Depth2HHA-python](https://github.com/charlesCXK/Depth2HHA-python).
 
+For preparation of other datasets, please refer to the original websites:
+- [NYU Depth V2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html)
+- [SUN-RGBD](https://rgbd.cs.princeton.edu/)
+- [ScanNetV2](http://www.scan-net.org/)
+- [RGB-T MFNet](https://github.com/haqishen/MFNet-pytorch)
+- [RGB-P ZJU](http://wangkaiwei.org/downloadeg.html)
+- [RGB-E EventScape](https://github.com/uzh-rpg/rpg_ramnet#eventscape)
+- [RGB-L KITTI-360](https://www.cvlibs.net/datasets/kitti-360/)
+
 ### Train
 1. Pretrain weights:
 
@@ -100,7 +113,7 @@ If you want to use multi GPUs please specify multiple Device IDs (0,1,2...).
 
 
 ## Result
-We offer the pre-trained weights on different RGBX datasets (Some weights are not avaiable yet, Due to the difference of training platforms, these weights may not be correctly loaded.):
+We offer the pre-trained weights on different RGBX datasets (Some weights are not available yet. Due to the difference of training platforms, these weights may not be correctly loaded):
 
 ### NYU-V2(40 categories)
 | Architecture | Backbone | mIOU(SS) | mIOU(MS & Flip) | Weight |
@@ -128,11 +141,11 @@ We offer the pre-trained weights on different RGBX datasets (Some weights are no
 ## Publication
 If you find this repo useful, please consider referencing the following paper:
 ```
-@article{liu2022cmx,
-  title={CMX: Cross-Modal Fusion for RGB-X Semantic Segmentation with Transformers},
-  author={Liu, Huayao and Zhang, Jiaming and Yang, Kailun and Hu, Xinxin and Stiefelhagen, Rainer},
-  journal={arXiv preprint arXiv:2203.04838},
-  year={2022}
+@article{zhang2023cmx,
+  title={CMX: Cross-modal fusion for RGB-X semantic segmentation with transformers},
+  author={Zhang, Jiaming and Liu, Huayao and Yang, Kailun and Hu, Xinxin and Liu, Ruiping and Stiefelhagen, Rainer},
+  journal={IEEE Transactions on Intelligent Transportation Systems},
+  year={2023}
 }
 ```
 
